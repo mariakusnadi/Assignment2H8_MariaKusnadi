@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Profil</title>
+        <link rel="stylesheet" href="bootstrap.min.css">
+    </head>
+    <body class="bg-light">
+        <!-- navbar start-->
+        <div class="p-3 shadow-sm text-end bg-white sticky-top">
+            <button type="button" class="btn btn-outline-dark btn-sm shadow-sm rounded-0 d-inline-block d-md-none" onclick="dropdown()">MENU</button>
+            <ul id="dropdown_nav" class="container nav justify-content-end">
+                <li class="nav-item">
+                    <a class="nav-link active link-primary" aria-current="page" href="#">HOME</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link link-dark" href="#">PRODUCT</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link link-dark" href="#">GALLERY</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link link-dark" href="./blog.html">BLOG</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link link-dark" href="#">INVENTORY</a>
+                </li>
+            </ul>
+        </div>
+        <!-- navbar end-->
+        <!-- biodata start-->
+        <div class="container bg-white shadow-sm p-3 mt-5 mb-5">
+            <div class="row">
+                <div class="col-md-2 p-3"><!-- image -->
+                    <img src="./images/developer.png" class="rounded-circle mx-auto d-block" alt="Developer" width=150>
+                </div>
+                <div id="bio" class="col-md-3 mb-3"><!-- bio -->
+                    <h1 id="nama" class="nama_profesi">Nama Anda</h1>
+                    <p id="role" class="nama_profesi mb-5">Front End Developer</p>
+                    <div class="nama_profesi">
+                        <button type="button" class="btn btn-primary me-md-2 px-4" onclick="tampilkanData()">Edit</button>
+                        <button type="button" class="btn btn-outline-success px-4">Resume</button>
+                    </div>
+                </div>
+                <div id="tabel-status" class="col-md-4"><!-- status -->
+                    <table class="table table-borderless table-sm align-top tabel-data-diri">
+                        <tr>
+                            <th class="ps-3">Availability</th>
+                            <td id="availability">Full Time</td>
+                        </tr>
+                        <tr>
+                            <th class="ps-3">Usia</th>
+                            <td id="usia">17</td>
+                        </tr>
+                        <tr>
+                            <th class="ps-3">Lokasi</th>
+                            <td id="lokasi">Jakarta, Indonesia</td>
+                        </tr>
+                        <tr>
+                            <th class="ps-3">Pengalaman</th>
+                            <td id="pengalaman">2</td>
+                        </tr>
+                        <tr>
+                            <th class="ps-3">Email</th>
+                            <td id="email">email@email.com</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!-- biodata end-->
+        <!-- form start-->
+        <div id="isi_form" class="container px-5 px-md-3" style="display:block;">
+            <div class="row bg-white pb-5 pb-sm-3 mb-sm-5 shadow-sm">
+                <div class="mb-3">
+                    <label for="formGroupExampleInput" class="form-label">Nama</label>
+                    <input type="text" class="form-control" id="formNama">
+                </div>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput2" class="form-label">Role</label>
+                    <input type="text" class="form-control" id="formRole">
+                </div>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput3" class="form-label">Availability</label>
+                    <input type="text" class="form-control" id="formAvailability">
+                </div>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput4" class="form-label">Usia</label>
+                    <input type="text" class="form-control" id="formUsia">
+                </div>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput5" class="form-label">Lokasi</label>
+                    <input type="text" class="form-control" id="formLokasi">
+                </div>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput6" class="form-label">Years Experience</label>
+                    <input type="text" class="form-control" id="formExperience">
+                </div>
+                <div class="mb-3">
+                    <label for="formGroupExampleInput7" class="form-label">Email</label>
+                    <input type="text" class="form-control" id="formEmail">
+                </div>
+                <div class="mb-3">
+                    <button type="submit" class="btn btn-success mt-4" style="width: 100%;" onclick="simpanForm()">SUBMIT</button>
+                </div>
+            </div>
+        </div>
+        <!-- form end-->
+
+        <script>
+            function dropdown(){
+                //binding elemen
+                let dropdownNavEl = document.getElementById("dropdown_nav")
+                //kondisi:
+                //apabila tampilan dropdown ada (display:block), maka tombol berfungsi menghilangkan div.
+                //apabila tampilan dropdown hilang(display:none), maka tombol berfungsi memunculkan div.
+                if (dropdownNavEl.style.display === "block") {
+                    dropdownNavEl.style.display = "none"
+                } else {
+                    dropdownNavEl.style.display = "block"
+                    }
+            }
+            function simpanForm(){
+                //binding input elemen
+                let formNamaEl = document.getElementById("formNama")
+                let formRoleEl = document.getElementById("formRole")
+                let formUsiaEl = document.getElementById("formUsia")
+                let formLokasiEl = document.getElementById("formLokasi")
+                let formExperienceEl = document.getElementById("formExperience")
+                let formEmailEl = document.getElementById("formEmail")
+                let formAvailabilityEl = document.getElementById("formAvailability")
+                //ambil value
+                let formNama = formNamaEl.value
+                let formRole = formRoleEl.value
+                let formUsia = formUsiaEl.value
+                let formLokasi = formLokasiEl.value
+                let formExperience = formExperienceEl.value
+                let formEmail = formEmailEl.value
+                let formAvailability = formAvailabilityEl.value
+                //binding hasil
+                nama.innerText = formNama
+                role.innerText = formRole
+                pengalaman.innerText = formExperience
+                usia.innerText = formUsia
+                lokasi.innerText = formLokasi
+                email.innerText = formEmail
+                availability.innerText = formAvailability
+            }
+            function tampilkanData(){
+                //binding input elemen
+                let isiFormEl = document.getElementById("isi_form")
+                //kondisi:
+                //apabila tampilan id isi_form ada (display:block), maka tombol berfungsi menghilangkan div.
+                //apabila tampilan id isi_form hilang(display:none), maka tombol berfungsi memunculkan div.
+                if (isiFormEl.style.display === "block") {
+                        isiFormEl.style.display = "none"
+                } else {
+                        isiFormEl.style.display = "block"
+                    }
+            }
+        </script>
+    </body>
+</html>
