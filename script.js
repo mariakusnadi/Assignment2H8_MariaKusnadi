@@ -1,6 +1,6 @@
 function dropdown(){
     //binding elemen
-    let dropdownNavEl = document.getElementById("dropdown_nav")
+    let dropdownNavEl       = document.getElementById("dropdown_nav")
     //kondisi:
     //apabila tampilan dropdown ada (display:block), maka tombol berfungsi menghilangkan div.
     //apabila tampilan dropdown hilang(display:none), maka tombol berfungsi memunculkan div.
@@ -31,20 +31,15 @@ function simpanForm(){
     //binding hasil
     nama.innerHTML          = formNama
     role.innerText          = formRole
-    pengalaman.innerText    = formExperience
-    usia.innerText          = formUsia
+    pengalaman.innerText    = formExperience + " " + "Tahun"
+    usia.innerText          = formUsia + " " + "Tahun"
     lokasi.innerText        = formLokasi
     email.innerText         = formEmail
     availability.innerText  = formAvailability
 
-    resetForm();
-}
-
-function resetForm(){
-    document.getElementById("isi_form").reset()
+    document.getElementById("isi_form").reset();
     alert("Data berhasil disimpan")
     document.getElementById("isi_form").style.display = "none";
-    
 }
 
 function tampilkanData(){
